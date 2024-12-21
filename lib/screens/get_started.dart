@@ -6,6 +6,7 @@ class GetStartedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: Stack(
         children: [
           // Background
@@ -108,6 +109,7 @@ class GetStartedScreen extends StatelessWidget {
             ],
           ),
         ],
+ 
       ),
     );
   }
