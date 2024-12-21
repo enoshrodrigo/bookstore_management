@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class WishlistScreen extends StatefulWidget {
+  const WishlistScreen({super.key});
+
   @override
   _WishlistScreenState createState() => _WishlistScreenState();
 }
