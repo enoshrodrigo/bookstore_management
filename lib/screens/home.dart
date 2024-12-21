@@ -68,20 +68,38 @@ class _HomeScreenState extends State<HomeScreen> {
 class HomePage extends StatelessWidget {
   final List<Map<String, String>> items = [
     {
-      'image': 'assets/01.jpg', // Replace with your actual image paths
-      'name': 'Brown Jacket',
+      'image': 'assets/book-01.jpg', // Replace with your actual image paths
+      'name': 'The Hobbit',
       'price': '83.97',
       'rating': '4.9',
     },
     {
-      'image': 'assets/02.png', // Replace with your actual image paths
-      'name': 'Brown Suit',
+      'image': 'assets/book-02.jpg', // Replace with your actual image paths
+      'name': 'Dracula ',
       'price': '120.00',
       'rating': '5.0',
     },
     {
-      'image': 'assets/02.png', // Replace with your actual image paths
-      'name': 'Yellow Shirt',
+      'image': 'assets/book-03.jpg', // Replace with your actual image paths
+      'name': 'Pride and Prejudice',
+      'price': '45.99',
+      'rating': '4.7',
+    },
+    {
+      'image': 'assets/book-05.jpg', // Replace with your actual image paths
+      'name': 'Dune',
+      'price': '70.99',
+      'rating': '4.2',
+    },
+    {
+      'image': 'assets/book-06.jpg', // Replace with your actual image paths
+      'name': '1984',
+      'price': '50.99',
+      'rating': '4.7',
+    },
+    {
+      'image': 'assets/book-07.jpg', // Replace with your actual image paths
+      'name': 'Mexican Gothic',
       'price': '45.99',
       'rating': '4.7',
     },
@@ -152,7 +170,7 @@ class HomePage extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 image: const DecorationImage(
-                  image: AssetImage('assets/02.png'), // Replace with your banner image
+                  image: AssetImage('assets/book-04.jpg'), // Replace with your banner image
                   fit: BoxFit.cover,
                 ),
               ),
