@@ -11,7 +11,7 @@ class LoginScreen extends StatelessWidget {
           onPressed: () {
             Navigator.pushNamed(context, '/home');
           },
-          child: const Text('This is Login'),
+          child: const Text('This is Lssogin'),
         ),
       ),
     );
