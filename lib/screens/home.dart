@@ -68,37 +68,37 @@ class _HomeScreenState extends State<HomeScreen> {
 class HomePage extends StatelessWidget {
   final List<Map<String, String>> items = [
     {
-      'image': 'assets/book-01.jpg', // Replace with your actual image paths
+      'image': 'assets/book-01.jpg', 
       'name': 'The Hobbit',
       'price': '83.97',
       'rating': '4.9',
     },
     {
-      'image': 'assets/book-02.jpg', // Replace with your actual image paths
+      'image': 'assets/book-02.jpg', 
       'name': 'Dracula ',
       'price': '120.00',
       'rating': '5.0',
     },
     {
-      'image': 'assets/book-03.jpg', // Replace with your actual image paths
+      'image': 'assets/book-03.jpg', 
       'name': 'Pride and Prejudice',
       'price': '45.99',
       'rating': '4.7',
     },
     {
-      'image': 'assets/book-05.jpg', // Replace with your actual image paths
+      'image': 'assets/book-05.jpg', 
       'name': 'Dune',
       'price': '70.99',
       'rating': '4.2',
     },
     {
-      'image': 'assets/book-06.jpg', // Replace with your actual image paths
+      'image': 'assets/book-06.jpg', 
       'name': '1984',
       'price': '50.99',
       'rating': '4.7',
     },
     {
-      'image': 'assets/book-07.jpg', // Replace with your actual image paths
+      'image': 'assets/book-07.jpg',
       'name': 'Mexican Gothic',
       'price': '45.99',
       'rating': '4.7',
@@ -170,7 +170,7 @@ class HomePage extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 image: const DecorationImage(
-                  image: AssetImage('assets/book-04.jpg'), // Replace with your banner image
+                  image: AssetImage('assets/book-04.jpg'), 
                   fit: BoxFit.cover,
                 ),
               ),
