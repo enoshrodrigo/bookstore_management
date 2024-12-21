@@ -11,7 +11,7 @@ class GetStartedScreen extends StatelessWidget {
           onPressed: () {
             Navigator.pushNamed(context, '/register');
           },
-          child: const Text('This is Get Started'),
+          child: const Text('This is Get Started Button'),
         ),
       ),
     );
