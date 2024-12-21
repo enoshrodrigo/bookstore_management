@@ -14,9 +14,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-  static final List<Widget> _widgetOptions = <Widget>[
+  static final List<Widget> _widgetOptions = <Widget>[ 
     HomePage(),
     const WishlistScreen(),
+ 
     const CartScreen(),
     const ProfileScreen(),
   ];
@@ -30,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
