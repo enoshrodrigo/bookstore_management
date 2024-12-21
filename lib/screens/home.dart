@@ -13,11 +13,11 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('Home Page'),
+  static final List<Widget> _widgetOptions = <Widget>[
+    const Text('Home Page'),
     WishlistScreen(),
-    CartScreen(),
-    ProfileScreen(),
+    const CartScreen(),
+    const ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -29,9 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Bookstore Management System'),
-      ),
+      
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
