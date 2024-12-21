@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'wishlist.dart';
 import 'cart.dart';
 import 'profile.dart';
+import 'search_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -117,18 +118,28 @@ class HomePage extends StatelessWidget {
             // Search Bar
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search for items...',
-                  hintStyle: TextStyle(color: Colors.grey.shade600),
-                  prefixIcon: Icon(Icons.search, color: Colors.deepPurpleAccent),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(color: Colors.deepPurpleAccent),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(color: Colors.deepPurpleAccent),
+              child: GestureDetector(
+                onTap: () {
+                  // Navigate to the SearchPage when tapped
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SearchPage()),
+                  );
+                },
+                child: TextField(
+                  enabled: false, // Disables typing in the TextField
+                  decoration: InputDecoration(
+                    hintText: 'Search for items...',
+                    hintStyle: TextStyle(color: Colors.grey.shade600),
+                    prefixIcon: const Icon(Icons.search, color: Colors.deepPurpleAccent),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(color: Colors.deepPurpleAccent),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(color: Colors.deepPurpleAccent),
+                    ),
                   ),
                 ),
               ),
@@ -212,8 +223,8 @@ class HomePage extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 30,
-          backgroundColor: Colors.deepPurpleAccent.withOpacity(0.2),
-          child: Icon(icon, size: 30, color: Colors.deepPurpleAccent),
+          backgroundColor: const Color.fromARGB(255, 16, 92, 35).withOpacity(0.2),
+          child: Icon(icon, size: 30, color: const Color.fromARGB(255, 3, 112, 94)),
         ),
         const SizedBox(height: 5),
         Text(label),
@@ -276,4 +287,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
