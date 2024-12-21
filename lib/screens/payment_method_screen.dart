@@ -41,7 +41,7 @@ class PaymentMethodScreen extends StatelessWidget {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 50),
-                backgroundColor: Colors.brown,
+                backgroundColor: const Color.fromARGB(255, 56, 207, 144),
               ),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => const PaymentSuccessScreen()));

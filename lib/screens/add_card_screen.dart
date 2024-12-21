@@ -52,7 +52,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
                 width: double.infinity,
                 height: 200,
                 decoration: BoxDecoration(
-                  color: Colors.brown[300],
+                  color:  const Color.fromARGB(255, 69, 148, 194),
                   borderRadius: BorderRadius.circular(16.0),
                 ),
                 padding: const EdgeInsets.all(16.0),
@@ -74,7 +74,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
                     Text(
                       _cardNumberController.text.isNotEmpty
                           ? _cardNumberController.text
-                          : '4716 9627 1635 8047',
+                          : '4716 9627 16XX XXXX',
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 20,
@@ -208,7 +208,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
                       onPressed: _submitForm,
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(double.infinity, 50),
-                        backgroundColor: Colors.brown,
+                        backgroundColor: const Color.fromARGB(255, 56, 207, 144),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0),
                         ),

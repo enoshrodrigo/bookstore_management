@@ -1,5 +1,5 @@
-import 'package:bookstore_management/screens/shipping_address_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:bookstore_management/screens/shipping_address_screen.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -10,12 +10,37 @@ class CartScreen extends StatefulWidget {
 
 class _CartScreenState extends State<CartScreen> {
   final List<Map<String, dynamic>> _cartItems = [
-    {'name': 'Book A', 'price': 15.0, 'quantity': 1},
-    {'name': 'Book B', 'price': 20.0, 'quantity': 2},
-    {'name': 'Book C', 'price': 30.0, 'quantity': 2},
-    {'name': 'Book D', 'price': 25.0, 'quantity': 1},
-    {'name': 'Book E', 'price': 40.0, 'quantity': 3},
-    {'name': 'Book F', 'price': 35.0, 'quantity': 4},
+    {
+      'name': 'Dracula',
+      'price': 15.0,
+      'quantity': 1,
+      'imageUrl': 'https://cdn.kobo.com/book-images/88a05cf1-a3b6-461b-a8f7-f0e25b06274a/1200/1200/False/dracula-bram-stoker.jpg'
+    },
+    {
+      'name': 'Pride and Prejudice',
+      'price': 20.0,
+      'quantity': 2,
+      'imageUrl': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzPj2cpc0LYXo_LR4RLvXfTvDxeivF-y_mmg&s'
+    },
+    {
+      'name': 'Circe',
+      'price': 30.0,
+      'quantity': 2,
+      'imageUrl': 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565909496i/35959740.jpg'
+    },
+    {
+      'name': 'The Song of Achilles',
+      'price': 25.0,
+      'quantity': 1,
+      'imageUrl': 'https://books.lk/wp-content/uploads/2021/01/achilles.jpg'
+    },
+    {
+      'name': '1984',
+      'price': 40.0,
+      'quantity': 3,
+      'imageUrl': 'https://cdn.waterstones.com/bookjackets/large/9780/1410/9780141036144.jpg'
+    }, 
+     
   ];
 
   final TextEditingController _promoController = TextEditingController();
@@ -44,7 +69,12 @@ class _CartScreenState extends State<CartScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   child: Card(
                     child: ListTile(
-                      leading: const Icon(Icons.book, size: 50),
+                      leading: Image.network(
+                        item['imageUrl'],
+                        width: 50,
+                        height: 50,
+                        fit: BoxFit.cover,
+                      ),
                       title: Text(item['name']),
                       subtitle: Text('Price: \$${item['price']} x ${item['quantity']}'),
                       trailing: Row(
@@ -90,7 +120,9 @@ class _CartScreenState extends State<CartScreen> {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 50),
-                backgroundColor: Colors.brown,
+                backgroundColor: 
+                 const Color.fromARGB(255, 56, 207, 144)
+                  , // Seaborn-inspired blue
               ),
               onPressed: () {
                 _showCheckoutSummary(context, _subTotal, deliveryFee, discount);
@@ -135,11 +167,16 @@ class _CartScreenState extends State<CartScreen> {
                   ),
                   const SizedBox(width: 10),
                   ElevatedButton(
-                    style: ElevatedButton.styleFrom(backgroundColor: Colors.brown),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 56, 207, 144), // Seaborn-inspired blue
+                    ),
                     onPressed: () {
                       // Handle promo code application
                     },
-                    child: const Text('Apply',style: TextStyle(color: Colors.white),),
+                    child: const Text(
+                      'Apply',
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ],
               ),
@@ -183,27 +220,34 @@ class _CartScreenState extends State<CartScreen> {
                 ],
               ),
               const SizedBox(height: 20),
-              
               ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size(double.infinity, 50),
-                backgroundColor: Colors.brown,
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(double.infinity, 50),
+                  backgroundColor: const Color.fromARGB(255, 56, 207, 144), // Seaborn-inspired blue
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ShippingAddressScreen(),
+                    ),
+                  );
+                },
+                child: const Text(
+                  'Confirm and Pay',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ShippingAddressScreen()),
-                );
-              },
-              child: const Text(
-                'Confirm and Pay',
-                style: TextStyle(color: Colors.white),
-              ),
-            )
             ],
           ),
         );
       },
     );
+  }
+
+  @override
+  void dispose() {
+    _promoController.dispose();
+    super.dispose();
   }
 }

@@ -51,7 +51,7 @@ class _AddShippingAddressScreenState extends State<AddShippingAddressScreen> {
               },
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 50),
-                backgroundColor: Colors.brown,
+                backgroundColor: const Color.fromARGB(255, 56, 207, 144),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25.0),
                 ),

@@ -39,26 +39,27 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
-            backgroundColor: Colors.deepPurpleAccent,
+            backgroundColor: Color.fromARGB(255, 46, 168, 216),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
             label: 'Wishlist',
-            backgroundColor: Colors.deepPurpleAccent,
+            backgroundColor: Color.fromARGB(255, 46, 168, 216),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
             label: 'Cart',
-            backgroundColor: Colors.deepPurpleAccent,
+            backgroundColor: Color.fromARGB(255, 46, 168, 216),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profile',
-            backgroundColor: Colors.deepPurpleAccent,
+            
+            backgroundColor: Color.fromARGB(255, 46, 168, 216),
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
+        selectedItemColor: const Color.fromARGB(255, 0, 0, 0),
         onTap: _onItemTapped,
       ),
     );

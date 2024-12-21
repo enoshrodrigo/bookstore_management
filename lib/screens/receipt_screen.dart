@@ -8,7 +8,7 @@ class ReceiptScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('E-Receipt'),
-        backgroundColor: Colors.brown,
+        backgroundColor: const Color.fromARGB(255, 69, 148, 194),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -49,7 +49,7 @@ class ReceiptScreen extends StatelessWidget {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 50),
-                backgroundColor: Colors.brown,
+                backgroundColor: const Color.fromARGB(255, 56, 207, 144),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
@@ -75,7 +75,7 @@ class ReceiptScreen extends StatelessWidget {
       children: [
         Icon(
           icon,
-          color: Colors.brown,
+          color: const Color.fromARGB(255, 56, 207, 144),
           size: 30,
         ),
         const SizedBox(width: 10),
