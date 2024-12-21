@@ -29,9 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Bookstore Management System'),
-      ),
+
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
