@@ -13,7 +13,7 @@ class ProfileScreen extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            Navigator.pop(context); // Back navigation
+            Navigator.pop(context); 
           },
         ),
       ),
@@ -28,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 const CircleAvatar(
                   radius: 50,
-                  backgroundImage: AssetImage('https://i.pinimg.com/736x/59/37/5f/59375f2046d3b594d59039e8ffbf485a.jpg'), // Replace with your image
+                  backgroundImage: AssetImage('assets/01.jpg'),
                 ),
                 Container(
                   decoration: const BoxDecoration(
@@ -54,7 +54,6 @@ class ProfileScreen extends StatelessWidget {
               title: const Text('Your Profile'),
               trailing: const Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () {
-                // Navigate to Your Profile Screen
               },
             ),
             ListTile(
@@ -62,7 +61,6 @@ class ProfileScreen extends StatelessWidget {
               title: const Text('Payment Methods'),
               trailing: const Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () {
-                // Navigate to Payment Methods Screen
               },
             ),
             ListTile(
@@ -70,7 +68,6 @@ class ProfileScreen extends StatelessWidget {
               title: const Text('My Orders'),
               trailing: const Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () {
-                // Navigate to My Orders Screen
               },
             ),
             ListTile(
@@ -78,7 +75,6 @@ class ProfileScreen extends StatelessWidget {
               title: const Text('Settings'),
               trailing: const Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () {
-                // Navigate to Settings Screen
               },
             ),
             ListTile(
@@ -86,7 +82,6 @@ class ProfileScreen extends StatelessWidget {
               title: const Text('Help Center'),
               trailing: const Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () {
-                // Navigate to Help Center Screen
               },
             ),
             ListTile(
@@ -94,7 +89,6 @@ class ProfileScreen extends StatelessWidget {
               title: const Text('Privacy Policy'),
               trailing: const Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () {
-                // Navigate to Privacy Policy Screen
               },
             ),
             ListTile(
@@ -102,15 +96,62 @@ class ProfileScreen extends StatelessWidget {
               title: const Text('Invite Friends'),
               trailing: const Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () {
-                // Navigate to Invite Friends Screen
               },
             ),
             ListTile(
-              leading: const Icon(Icons.logout, color: Colors.red),
+              leading: const Icon(Icons.logout, color: Colors.brown),
               title: const Text('Log Out'),
               trailing: const Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () {
-                // Log Out functionality
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      title: const Text(
+                        'Logout',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      content: const Text(
+                        'Are you sure you want to log out?',
+                        textAlign: TextAlign.center,
+                      ),
+                      actionsAlignment: MainAxisAlignment.spaceAround,
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop(); // Close the dialog
+                          },
+                          style: TextButton.styleFrom(
+                            foregroundColor: Colors.brown,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                              side: const BorderSide(color: Colors.brown),
+                            ),
+                          ),
+                          child: const Text('Cancel'),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            // Perform logout functionality here
+                            Navigator.of(context).pop(); // Close the dialog
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.brown,
+                            foregroundColor: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+                          child: const Text('Yes, Logout'),
+                        ),
+                      ],
+                    );
+                  },
+                );
               },
             ),
           ],
