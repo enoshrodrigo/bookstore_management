@@ -21,12 +21,12 @@ class _WishlistScreenState extends State<WishlistScreen> {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
-        title: Text(
+        title: const Text(
           'My Wishlist',
           style: TextStyle(color: Colors.black),
         ),
@@ -43,13 +43,13 @@ class _WishlistScreenState extends State<WishlistScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   _buildFilterButton('All'),
-                  SizedBox(width: 10.0),
+                  const SizedBox(width: 10.0),
                   _buildFilterButton('Science Fiction'),
-                  SizedBox(width: 10.0),
+                  const SizedBox(width: 10.0),
                   _buildFilterButton('Fantasy'),
-                  SizedBox(width: 10.0),
+                  const SizedBox(width: 10.0),
                   _buildFilterButton('Horror'),
-                  SizedBox(width: 10.0),
+                  const SizedBox(width: 10.0),
                   _buildFilterButton('Romance'),
                 ],
               ),
@@ -57,8 +57,8 @@ class _WishlistScreenState extends State<WishlistScreen> {
           ),
           Expanded(
             child: GridView.builder(
-              padding: EdgeInsets.all(16.0),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              padding: const EdgeInsets.all(16.0),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 10.0,
                 mainAxisSpacing: 10.0,
@@ -94,16 +94,16 @@ class _WishlistScreenState extends State<WishlistScreen> {
         });
       },
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
         decoration: BoxDecoration(
-          color: isSelected ? Colors.black : Colors.white,
+          color: isSelected ? const Color.fromARGB(255, 62, 144, 168) : const Color.fromARGB(255, 78, 204, 162),
           borderRadius: BorderRadius.circular(20.0),
           border: Border.all(color: Colors.black),
         ),
         child: Text(
           text,
           style: TextStyle(
-            color: isSelected ? Colors.white : Colors.black,
+            color: isSelected ? const Color.fromARGB(255, 0, 0, 0) : const Color.fromARGB(255, 255, 255, 255),
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -136,19 +136,19 @@ class _WishlistScreenState extends State<WishlistScreen> {
               children: [
                 Text(
                   book.title,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 4.0),
+                const SizedBox(height: 4.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('\$${book.price}',
-                        style: TextStyle(color: Colors.grey)),
+                        style: const TextStyle(color: Colors.grey)),
                     Row(
                       children: [
-                        Icon(Icons.star, size: 16.0, color: Colors.amber),
+                        const Icon(Icons.star, size: 16.0, color: Colors.amber),
                         Text('${book.rating}',
-                            style: TextStyle(fontWeight: FontWeight.bold)),
+                            style: const TextStyle(fontWeight: FontWeight.bold)),
                       ],
                     ),
                   ],
@@ -165,7 +165,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
 class ProductDetailsScreen extends StatelessWidget {
   final Book book;
 
-  ProductDetailsScreen({required this.book});
+  const ProductDetailsScreen({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
@@ -174,12 +174,12 @@ class ProductDetailsScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
-        title: Text(
+        title: const Text(
           'Product Details',
           style: TextStyle(color: Colors.black),
         ),
@@ -191,7 +191,7 @@ class ProductDetailsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              color: Color(0xFFE0F7F1), // Light sea green background for the image
+              color: const Color(0xFFE0F7F1), // Light sea green background for the image
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(16.0),
                 child: Image.network(
@@ -202,13 +202,13 @@ class ProductDetailsScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Center(
               child: Column(
                 children: [
                   Text(
                     '${book.rating}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 48.0,
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
@@ -226,34 +226,34 @@ class ProductDetailsScreen extends StatelessWidget {
                       );
                     }),
                   ),
-                  SizedBox(height: 8.0),
-                  Text(
+                  const SizedBox(height: 8.0),
+                  const Text(
                     'Out of 5 stars',
                     style: TextStyle(fontSize: 16.0, color: Colors.black54),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Text(
               book.title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 26.0,
                 fontWeight: FontWeight.bold,
                 color: Colors.black87,
               ),
             ),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             Text(
               '\$${book.price}',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 22.0,
                 fontWeight: FontWeight.w500,
                 color: Colors.green,
               ),
             ),
-            SizedBox(height: 16.0),
-            Text(
+            const SizedBox(height: 16.0),
+            const Text(
               'Product Details',
               style: TextStyle(
                 fontSize: 20.0,
@@ -261,24 +261,24 @@ class ProductDetailsScreen extends StatelessWidget {
                 color: Colors.black87,
               ),
             ),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             Text(
               book.description,
-              style: TextStyle(fontSize: 16.0, height: 1.5, color: Colors.black54),
+              style: const TextStyle(fontSize: 16.0, height: 1.5, color: Colors.black54),
             ),
-            Spacer(),
+            const Spacer(),
             ElevatedButton(
               onPressed: () {
                 // Add to cart functionality
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.teal, // Updated button color
-                minimumSize: Size(double.infinity, 56),
+                minimumSize: const Size(double.infinity, 56),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12.0),
                 ),
               ),
-              child: Text(
+              child: const Text(
                 'Add to Cart',
                 style: TextStyle(fontSize: 20.0, color: Colors.white),
               ),

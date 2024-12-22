@@ -13,16 +13,13 @@ class _SignInScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 78, 204, 162),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
-        
         child: Column(
-          
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Sign In Title
-            const ColoredBox(color: Colors.black12),
             const Text(
               'Sign In',
               textAlign: TextAlign.center,
@@ -32,14 +29,12 @@ class _SignInScreenState extends State<LoginScreen> {
               ),
             ),
             const SizedBox(height: 10),
-            // Subtitle
             const Text(
               'Hi, welcome back, you have been missed',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, color: Colors.black54),
             ),
             const SizedBox(height: 40),
-            // Email Text Field
             TextField(
               decoration: InputDecoration(
                 labelText: 'Email',
@@ -52,7 +47,6 @@ class _SignInScreenState extends State<LoginScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            // Password Text Field
             TextField(
               obscureText: !_isPasswordVisible,
               decoration: InputDecoration(
@@ -62,7 +56,7 @@ class _SignInScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.circular(30),
                 ),
                 filled: true,
-                fillColor: Colors.grey[200],
+                fillColor: const Color.fromARGB(255, 217, 223, 224),
                 suffixIcon: IconButton(
                   icon: Icon(
                     _isPasswordVisible
@@ -77,13 +71,10 @@ class _SignInScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-            // Forgot Password
             Align(
               alignment: Alignment.centerRight,
               child: TextButton(
-                onPressed: () {
-                  // Add your 'Forgot Password' action here
-                },
+                onPressed: () {},
                 child: const Text(
                   'Forgot Password?',
                   style: TextStyle(color: Color.fromARGB(255, 28, 147, 151)),
@@ -91,26 +82,24 @@ class _SignInScreenState extends State<LoginScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            // Sign In Button
             ElevatedButton(
               onPressed: () {
-                // Add your sign-in action here
                 Navigator.pushNamed(context, '/home');
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 15),
-                backgroundColor: Colors.green,
+                backgroundColor: const Color.fromARGB(255, 0, 96, 126),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
               ),
               child: const Text(
                 'Sign In',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18, color: Colors.white)
+                ,
               ),
             ),
             const SizedBox(height: 20),
-            // OR divider
             const Row(
               children: [
                 Expanded(child: Divider(thickness: 1)),
@@ -118,51 +107,46 @@ class _SignInScreenState extends State<LoginScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
                     'Or sign in with',
-                    style: TextStyle(color: Colors.black54),
+                    style: TextStyle(color: Colors.black54,
+                    fontSize: 16,
+                      
+                    )
+
+                     
+
+                    ,
                   ),
                 ),
                 Expanded(child: Divider(thickness: 1)),
               ],
             ),
             const SizedBox(height: 20),
-            // Social Media Buttons (Apple, Google, Facebook)
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Apple Button
                 IconButton(
                   icon: const Icon(Icons.apple),
-                  onPressed: () {
-                    // Add Apple login action
-                  },
+                  onPressed: () {},
                   iconSize: 40,
                   color: Colors.black,
                 ),
                 const SizedBox(width: 20),
-                // Google Button
                 IconButton(
                   icon: const Icon(Icons.games),
-                  color: Colors.blue, // Replace with your Google logo asset
-                  onPressed: () {
-                    // Add Google login action
-                  },
+                  color: Colors.blue,
+                  onPressed: () {},
                   iconSize: 40,
                 ),
                 const SizedBox(width: 20),
-                // Facebook Button
                 IconButton(
                   icon: const Icon(Icons.snapchat),
                   color: const Color.fromARGB(255, 0, 0, 0),
-                  // Replace with your Facebook logo asset
-                  onPressed: () {
-                    // Add Facebook login action
-                  },
+                  onPressed: () {},
                   iconSize: 40,
                 ),
               ],
             ),
             const SizedBox(height: 20),
-            // Sign Up Link
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -173,7 +157,7 @@ class _SignInScreenState extends State<LoginScreen> {
                   },
                   child: const Text(
                     'Sign Up',
-                    style: TextStyle(color: Colors.green),
+                    style: TextStyle(color: Color.fromARGB(255, 78, 204, 162)),
                   ),
                 ),
               ],

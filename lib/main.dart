@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/get_started.dart';
 import 'screens/register.dart';
-import 'screens/login.dart';
+import 'screens/login.dart' as login;
 import 'screens/home.dart';
 import 'screens/shipping_address_screen.dart';
 import 'screens/payment_method_screen.dart';
@@ -26,7 +26,7 @@ class BookstoreApp extends StatelessWidget {
       routes: {
         '/get_started': (context) => const GetStartedScreen(),
         '/register': (context) => const RegisterScreen(),
-        '/login': (context) => const LoginScreen(),
+        '/login': (context) => const login.LoginScreen(),
         '/home': (context) => const HomeScreen(),
         '/shipping_address': (context) => const ShippingAddressScreen(),
         '/payment_method': (context) => const PaymentMethodScreen(),
