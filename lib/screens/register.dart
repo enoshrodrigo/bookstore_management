@@ -125,7 +125,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   },
                   child: const Text(
                     'Sign In',
-                    style: TextStyle(color: Color.fromARGB(255, 78, 204, 162)),
+                    style: TextStyle(color: Color.fromARGB(255, 38, 39, 41)),
                   ),
                 ),
               ],
